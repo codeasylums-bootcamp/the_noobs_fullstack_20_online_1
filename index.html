@@ -10,7 +10,7 @@
 <script type="text/javascript" src="zomatoapi.js"></script>
 </head>
 <body>
-<section class="header" id="myDIV">
+<section class="header" id="hide-div" style="display: block">
 <h1><a href="" class="typewrite" data-period="2000" data-type='["Welcome foodies!", "Order, Eat, Sleep, Repeat", "Hangry is an emotion"]'>
     <span class="wrap"></span>
   </a>
@@ -19,51 +19,53 @@
 <div class="input-group">
     <input type="text" class="form-control" id="text-search" placeholder="Enter Your Destination">
     <div class="input-group-append">
-    <button type="submit" onclick="openSearch()" class="input-group-text btn">Search</button>    
+    <button type="submit" onclick="hideDiv();openSearch();" class="input-group-text btn">Search</button>    
     </div>
 </div>
 
 </section>  
-<section class="features">
+<section class="features" id="show-div" style="display: none">
     <div class="container">
+        <h1>Trending collections!</h1>
+        <p>Browse lists of the finest restaurants in your city.</p>
         <div class="row" id="title">
 
         </div>
     </div>
 </section>  
 
-<section class="gallery">
-<h1>Travelling Gallery</h1>
+<section class="gallery" id="show-div1" style="display: none">
+<h1>Food gallery</h1>
 <div class="container">
 <div class="row">
 <div class="col-md-3">
     <div class="gallery-box">
-        <img src="https://www.bruisedpassports.com/wp-content/uploads/2017/11/Sikkim-Itinerary-7-1024x684.jpg">
-        <h4>Sikkim</h4>
+        <img src="https://66.media.tumblr.com/c1da35f283662765d688bcc90281d7d8/tumblr_mvhc10Xbv01ro9rq7o2_400.gif">
+        <h4>Healthy</h4>
     </div>
 </div> 
 <div class="col-md-3">
     <div class="gallery-box">
-        <img src="https://www.bruisedpassports.com/wp-content/uploads/2017/11/road-trip-karnataka-coorg-mysore-15-1024x684.jpg">
-        <h4>Coorg</h4>
+        <img src="https://i2.wp.com/codemyui.com/wp-content/uploads/2018/02/cheesy-pizza-loader.gif?">
+        <h4>Comfort Food</h4>
     </div>
 </div>
 <div class="col-md-3">
     <div class="gallery-box">
-        <img src="https://www.bruisedpassports.com/wp-content/uploads/2016/07/Leh-Ladakh-Road-Trip-India-Itinerary-Planning-6.jpg">
-        <h4>Kashmir</h4>
+        <img src="https://bestanimations.com/Food/Beverages/Coffee/coffee-animated-gif-18.gif">
+        <h4>Coffee</h4>
     </div>
 </div>
 <div class="col-md-3">
     <div class="gallery-box">
-        <img src="https://www.bruisedpassports.com/wp-content/uploads/2017/07/Things-to-do-in-Udaipur-city-palace.jpg">
-        <h4>Udaipur</h4>
+        <img src="https://66.media.tumblr.com/6298469f379334e3c98aadf48fa461f6/tumblr_okknjsByo81sa9pj8o3_500.gifv">
+        <h4>Chocolate</h4>
     </div>
 </div> 
 </div>    
 </div>
 </section>
-<section class="banner">
+<section class="banner" id="show-div2" style="display: none">
     <div class="banner-highlights">
         <div class="container">
             <div class="row">
@@ -79,7 +81,7 @@
         </div>
     </div>
 </section>
-<section class="users-feedback">
+<section class="users-feedback" id="show-div3" style="display: none">
 <h1>Users Review</h1> 
 <div class="container">
 <div class="row">
@@ -113,7 +115,7 @@
 </div>    
 </div>
 </section>
-<section class="footer">
+<section class="footer" id="show-div4" style="display: none">
 <div class="container">
 <div class="row">
     <div class="col-md-3">
@@ -143,11 +145,26 @@
 </section>
 <script>
         
-   function openSearch(){
-console.log("div hide");
-    var x = document.getElementById("myDIV");
-    x.style.display = "none";
-}   
+    function hideDiv() {
+        console.log("inside hidediv");
+  var hide = document.getElementById("hide-div");
+  var show = document.getElementById("show-div");
+  var show1 = document.getElementById("show-div1");
+  var show2 = document.getElementById("show-div2");
+  var show3 = document.getElementById("show-div3");
+  var show4 = document.getElementById("show-div4");
+
+  
+  if (hide.style.display === "block" && show.style.display === "none"){
+    hide.style.display = "none";
+    show.style.display = "block";
+    show1.style.display = "block";
+    show2.style.display = "block";
+    show3.style.display = "block";
+    show4.style.display = "block";
+
+  } 
+}
 
    function openSearch(){
         let output ='';
